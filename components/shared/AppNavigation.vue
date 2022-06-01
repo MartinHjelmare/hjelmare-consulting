@@ -23,21 +23,6 @@ export default {
     "
   >
     <NuxtLink
-      to="/projects"
-      class="
-        block
-        text-left text-lg text-primary-dark
-        dark:text-ternary-light
-        hover:text-secondary-dark
-        dark:hover:text-secondary-light
-        sm:mx-4
-        mb-2
-        sm:py-2
-      "
-      aria-label="Projects"
-      >Projects</NuxtLink
-    >
-    <NuxtLink
       to="/about"
       class="
         block

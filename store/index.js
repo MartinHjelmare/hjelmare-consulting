@@ -39,18 +39,8 @@ export const state = () => ({
     },
     {
       id: uuidv4(),
-      value: "mobile",
-      name: "Mobile Applicaiton",
-    },
-    {
-      id: uuidv4(),
-      value: "ui-ux",
-      name: "UI/UX Design",
-    },
-    {
-      id: uuidv4(),
-      value: "branding",
-      name: "Branding & Animations",
+      value: "python",
+      name: "Python Project",
     },
   ],
 });
