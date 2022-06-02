@@ -1,0 +1,5 @@
+[build]
+
+publish = ".nuxt/dist/"
+
+command = "yarn build"
