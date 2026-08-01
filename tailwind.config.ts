@@ -1,4 +1,7 @@
-module.exports = {
+import forms from "@tailwindcss/forms";
+import type { Config } from "tailwindcss";
+
+export default {
   content: [
     "./components/**/*.{vue,js}",
     "./layouts/**/*.vue",
@@ -35,5 +38,5 @@ module.exports = {
       opacity: ["disabled"],
     },
   },
-  plugins: [require("@tailwindcss/forms")],
-};
+  plugins: [forms],
+} satisfies Config;
