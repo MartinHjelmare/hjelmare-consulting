@@ -18,7 +18,7 @@
   "devDependencies": {
     "@nuxtjs/color-mode": "^2.1.1",
     "@nuxtjs/tailwindcss": "^4.2.0",
-    "postcss": "^8.5.10",
+    "postcss": "^8.5.18",
     "vue-backtotop": "^1.6.1"
   }
 }
