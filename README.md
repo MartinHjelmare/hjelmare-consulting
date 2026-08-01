@@ -56,3 +56,4 @@ yarn generate
 ```
 
 Static files are generated into `.output/public`.
+For Netlify deploys, use `dist` as publish directory (`dist` is generated as a symlink to `.output/public`).
