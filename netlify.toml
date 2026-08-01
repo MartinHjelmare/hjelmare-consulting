@@ -3,3 +3,7 @@
 publish = "dist"
 
 command = "yarn generate"
+
+[build.environment]
+
+NODE_VERSION = "22"

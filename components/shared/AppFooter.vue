@@ -1,24 +1,19 @@
-<script>
-import { mapState } from "vuex";
+<script setup>
+import { storeToRefs } from "pinia";
 import feather from "feather-icons";
 import FooterCopyright from "./FooterCopyright.vue";
-export default {
-  components: { FooterCopyright },
-  data: () => {
-    return {
-      // Todo
-    };
-  },
-  computed: {
-    ...mapState(["copyrightDate", "socialProfiles"]),
-  },
-  mounted() {
-    feather.replace();
-  },
-  updated() {
-    feather.replace();
-  },
-};
+import { useSiteStore } from "~/stores/site";
+
+const siteStore = useSiteStore();
+const { socialProfiles } = storeToRefs(siteStore);
+
+onMounted(() => {
+  feather.replace();
+});
+
+onUpdated(() => {
+  feather.replace();
+});
 </script>
 
 <template>

@@ -1,5 +1,10 @@
 # Hjelmare Consulting Site
 
+## Requirements
+
+- Node.js 18+ (recommended: Node.js 22 LTS)
+- Yarn
+
 ## Installation
 
 1. Clone the repo
@@ -32,7 +37,7 @@
     yarn dev
     ```
 
-## For production build and generating static files
+## Production
 
 ### Build for production and launch server
 
@@ -49,3 +54,6 @@ yarn start
 ```sh
 yarn generate
 ```
+
+Static files are generated into `.output/public`.
+For Netlify deploys, use `dist` as publish directory (`dist` is generated as a symlink to `.output/public`).

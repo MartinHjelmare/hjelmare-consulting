@@ -2,15 +2,8 @@
   <button>{{ title }}</button>
 </template>
 
-<script>
-export default {
-  props: ["title"],
-  data: () => {
-    return {
-      // @todo
-    };
-  },
-};
+<script setup>
+defineProps(["title"]);
 </script>
 
 <style lang="scss" scoped></style>

@@ -1,19 +1,12 @@
-<script>
+<script setup>
 import feather from "feather-icons";
 import Button from "./reusable/Button.vue";
-export default {
-  props: ["showModal", "modal", "categories"],
-  components: { Button },
-  data: () => {
-    return {
-      // @todo
-    };
-  },
-  mounted() {
-    feather.replace();
-  },
-  methods: {},
-};
+
+defineProps(["showModal", "modal", "categories"]);
+
+onMounted(() => {
+  feather.replace();
+});
 </script>
 
 <template>
@@ -75,14 +68,7 @@ export default {
                 </button>
               </div>
               <div class="modal-body p-5 w-full h-full">
-                <form
-                  @submit="
-                    (e) => {
-                      e.preventDefault;
-                    }
-                  "
-                  class="max-w-xl m-4 text-left"
-                >
+                <form @submit.prevent class="max-w-xl m-4 text-left">
                   <div class="mt-0">
                     <input
                       class="

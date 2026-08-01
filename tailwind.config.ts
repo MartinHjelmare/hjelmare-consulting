@@ -1,12 +1,14 @@
-const colors = require("tailwindcss/colors");
+import forms from "@tailwindcss/forms";
+import type { Config } from "tailwindcss";
 
-module.exports = {
-  purge: [
+export default {
+  content: [
     "./components/**/*.{vue,js}",
     "./layouts/**/*.vue",
     "./pages/**/*.vue",
     "./plugins/**/*.{js,ts}",
     "./nuxt.config.{js,ts}",
+    "./app.vue",
   ],
   darkMode: "class",
   theme: {
@@ -36,5 +38,5 @@ module.exports = {
       opacity: ["disabled"],
     },
   },
-  plugins: [require("@tailwindcss/forms")],
-};
+  plugins: [forms],
+} satisfies Config;
