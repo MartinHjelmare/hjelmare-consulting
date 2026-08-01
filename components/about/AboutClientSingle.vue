@@ -1,12 +1,5 @@
-<script>
-export default {
-  props: ["client"],
-  data: () => {
-    return {
-      // @todo
-    };
-  },
-};
+<script setup>
+defineProps(["client"]);
 </script>
 
 <template>

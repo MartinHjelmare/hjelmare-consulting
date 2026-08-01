@@ -1,15 +1,9 @@
-<script>
-import { mapState } from "vuex";
-export default {
-  data: () => {
-    return {
-      // @todo
-    };
-  },
-  computed: {
-    ...mapState(["clientsHeading", "clients"]),
-  },
-};
+<script setup>
+import { storeToRefs } from "pinia";
+import { useSiteStore } from "~/stores/site";
+
+const siteStore = useSiteStore();
+const { clientsHeading, clients } = storeToRefs(siteStore);
 </script>
 
 <template>

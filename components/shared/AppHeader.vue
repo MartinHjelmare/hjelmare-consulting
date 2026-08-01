@@ -1,44 +1,34 @@
-<script>
-import { mapState } from "vuex";
+<script setup>
+import { storeToRefs } from "pinia";
 import HireMeModal from "../HireMeModal.vue";
 import AppNavigation from "./AppNavigation.vue";
+import { useSiteStore } from "~/stores/site";
 
-export default {
-  components: {
-    HireMeModal,
-    AppNavigation,
-  },
-  data: () => {
-    return {
-      isOpen: false,
-      modal: false,
-    };
-  },
+const isOpen = ref(false);
+const modal = ref(false);
+const isClientMounted = ref(false);
+const colorMode = useColorMode();
 
-  computed: {
-    ...mapState(["categories"]),
-  },
-  methods: {
-    themeSwitcher() {
-      this.$colorMode.preference =
-        this.$colorMode.value == "light" ? "dark" : "light";
-    },
-    showModal() {
-      if (this.modal) {
-        // Stop screen scrolling
-        document
-          .getElementsByTagName("html")[0]
-          .classList.remove("overflow-y-hidden");
-        this.modal = false;
-      } else {
-        document
-          .getElementsByTagName("html")[0]
-          .classList.add("overflow-y-hidden");
-        this.modal = true;
-      }
-    },
-  },
+const siteStore = useSiteStore();
+const { categories } = storeToRefs(siteStore);
+
+const themeSwitcher = () => {
+  colorMode.preference = colorMode.value == "light" ? "dark" : "light";
 };
+
+const showModal = () => {
+  if (modal.value) {
+    document.documentElement.classList.remove("overflow-y-hidden");
+    modal.value = false;
+  } else {
+    document.documentElement.classList.add("overflow-y-hidden");
+    modal.value = true;
+  }
+};
+
+onMounted(() => {
+  isClientMounted.value = true;
+});
 </script>
 
 <template>
@@ -60,15 +50,15 @@ export default {
         <div>
           <NuxtLink to="/">
             <img
-              v-if="this.$colorMode.value == 'dark'"
-              src="~/static/logo-light.svg"
+              v-if="isClientMounted && colorMode.value == 'dark'"
+              src="/logo-light.svg"
               class="w-36"
               alt="Light Logo"
             />
 
             <img
               v-else
-              src="~/static/logo-dark.svg"
+              src="/logo-dark.svg"
               alt="Color Logo"
               class="w-36"
             />
@@ -93,7 +83,7 @@ export default {
         >
           <!-- Dark mode icon -->
           <svg
-            v-if="$colorMode.value == 'light'"
+            v-if="!isClientMounted || colorMode.value == 'light'"
             xmlns="http://www.w3.org/2000/svg"
             class="
               text-liText-ternary-dark
@@ -197,7 +187,7 @@ export default {
         >
           <!-- Dark mode icon -->
           <svg
-            v-if="$colorMode.value == 'light'"
+            v-if="!isClientMounted || colorMode.value == 'light'"
             xmlns="http://www.w3.org/2000/svg"
             class="
               text-liText-ternary-dark

@@ -1,6 +1,6 @@
-export default {
-  // Target: https://go.nuxtjs.dev/config-target
-  target: "static",
+export default defineNuxtConfig({
+  compatibilityDate: "2026-08-01",
+
   colorMode: {
     classSuffix: "",
   },
@@ -23,24 +23,22 @@ export default {
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: ["~/assets/app.css"],
 
-  // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: [
-    // "~/plugins/back-to-top.js"
+  components: [
+    {
+      path: "~/components",
+      pathPrefix: false,
+    },
   ],
 
-  // Auto import components: https://go.nuxtjs.dev/config-components
-  components: true,
-
-  // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
-  buildModules: [
-    // https://go.nuxtjs.dev/tailwindcss
+  modules: [
     "@nuxtjs/tailwindcss",
     "@nuxtjs/color-mode",
+    "@pinia/nuxt",
   ],
 
-  // Modules: https://go.nuxtjs.dev/config-modules
-  modules: [],
-
-  // Build Configuration: https://go.nuxtjs.dev/config-build
-  build: {},
-};
+  nitro: {
+    prerender: {
+      routes: ["/", "/about", "/contact"],
+    },
+  },
+});

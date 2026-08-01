@@ -1,23 +1,16 @@
-<script>
-import { mapState } from "vuex";
+<script setup>
+import { storeToRefs } from "pinia";
+import { useSiteStore } from "~/stores/site";
 
-export default {
-  data: () => {
-    return {
-      // @todo
-    };
-  },
-  computed: {
-    ...mapState(["aboutMe"]),
-  },
-};
+const siteStore = useSiteStore();
+const { aboutMe } = storeToRefs(siteStore);
 </script>
 
 <template>
   <div class="block sm:flex sm:gap-10 mt-10 sm:mt-20">
     <!-- About profile image -->
     <div class="w-full sm:w-1/4 mb-7 sm:mb-0">
-      <img src="~/static/profile.jpg" class="rounded-lg w-96" alt="" />
+      <img src="/profile.jpg" class="rounded-lg w-96" alt="" />
     </div>
 
     <!-- About details -->

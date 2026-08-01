@@ -1,17 +1,11 @@
-<script>
-import { mapState } from "vuex";
+<script setup>
+import { storeToRefs } from "pinia";
+import { useSiteStore } from "~/stores/site";
 
-export default {
-  data: () => {
-    return {
-      projectName: "Hjelmare Consulting",
-      author: "Martin Hjelmare",
-    };
-  },
-  computed: {
-    ...mapState(["copyrightDate"]),
-  },
-};
+const projectName = "Hjelmare Consulting";
+const author = "Martin Hjelmare";
+const siteStore = useSiteStore();
+const { copyrightDate } = storeToRefs(siteStore);
 </script>
 
 <template>

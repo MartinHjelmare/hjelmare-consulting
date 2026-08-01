@@ -1,31 +1,30 @@
-<script>
+<script setup>
 import feather from "feather-icons";
 
-export default {
+definePageMeta({
   scrollToTop: true,
-  data: () => {
-    return {
-      contacts: [
-        {
-          id: 1,
-          name: "Stockholm, Sweden",
-          icon: "map-pin",
-        },
-        {
-          id: 2,
-          name: "hjelmare.consulting@gmail.com",
-          icon: "mail",
-        },
-      ],
-    };
+});
+
+const contacts = [
+  {
+    id: 1,
+    name: "Stockholm, Sweden",
+    icon: "map-pin",
   },
-  mounted() {
-    feather.replace();
+  {
+    id: 2,
+    name: "hjelmare.consulting@gmail.com",
+    icon: "mail",
   },
-  updated() {
-    feather.replace();
-  },
-};
+];
+
+onMounted(() => {
+  feather.replace();
+});
+
+onUpdated(() => {
+  feather.replace();
+});
 </script>
 
 <template>

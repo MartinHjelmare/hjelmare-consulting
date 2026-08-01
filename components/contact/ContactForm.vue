@@ -1,13 +1,5 @@
-<script>
+<script setup>
 import Button from "../reusable/Button.vue";
-export default {
-  components: { Button },
-  data: () => {
-    return {
-      // @todo
-    };
-  },
-};
 </script>
 
 <template>
@@ -37,14 +29,7 @@ export default {
       >
         Contact Form
       </p>
-      <form
-        @submit="
-          (e) => {
-            e.preventDefault;
-          }
-        "
-        class="font-general-regular space-y-7"
-      >
+      <form @submit.prevent class="font-general-regular space-y-7">
         <div class="">
           <label
             class="block text-lg text-primary-dark dark:text-primary-light mb-2"

@@ -1,16 +1,17 @@
-<script>
+<script setup>
 import feather from "feather-icons";
 
-export default {
-  name: "About",
+definePageMeta({
   scrollToTop: true,
-  mounted() {
-    feather.replace();
-  },
-  updated() {
-    feather.replace();
-  },
-};
+});
+
+onMounted(() => {
+  feather.replace();
+});
+
+onUpdated(() => {
+  feather.replace();
+});
 </script>
 
 <template>

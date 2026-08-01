@@ -1,21 +1,21 @@
-<script>
-export default {
-  props: {
-    select: {
-      type: String,
-      default: "projects",
-    },
-    selectOptions: {
-      type: Array,
-      default: () => [
-        "Web Application",
-        "Mobile Application",
-        "UI/UX Design",
-        "Branding & Anim",
-      ],
-    },
+<script setup>
+defineProps({
+  select: {
+    type: String,
+    default: "projects",
   },
-};
+  selectOptions: {
+    type: Array,
+    default: () => [
+      "Web Application",
+      "Mobile Application",
+      "UI/UX Design",
+      "Branding & Anim",
+    ],
+  },
+});
+
+defineEmits(["change"]);
 </script>
 
 <template>

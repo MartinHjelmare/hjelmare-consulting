@@ -1,42 +1,40 @@
-<script>
-import { mapState } from "vuex";
+<script setup>
+import { storeToRefs } from "pinia";
 import feather from "feather-icons";
+import { useSiteStore } from "~/stores/site";
 
-export default {
-  data: () => {
-    return {
-      selectedProject: "",
-      searchProject: "",
-    };
-  },
-  computed: {
-    ...mapState(["projectsHeading", "projectsDescription", "projects"]),
-    filteredProjects() {
-      if (this.selectedProject) {
-        return this.filterProjectsByCategory();
-      } else if (this.searchProject) {
-        return this.filterProjectsBySearch();
-      }
-      return this.projects;
-    },
-  },
-  methods: {
-    filterProjectsByCategory() {
-      return this.projects.filter((item) => {
-        let category =
-          item.category.charAt(0).toUpperCase() + item.category.slice(1);
-        return category.includes(this.selectedProject);
-      });
-    },
-    filterProjectsBySearch() {
-      let project = new RegExp(this.searchProject, "i");
-      return this.projects.filter((el) => el.title.match(project));
-    },
-  },
-  mounted() {
-    feather.replace();
-  },
+const selectedProject = ref("");
+const searchProject = ref("");
+
+const siteStore = useSiteStore();
+const { projectsHeading, projectsDescription, projects } = storeToRefs(siteStore);
+
+const filterProjectsByCategory = () => {
+  return projects.value.filter((item) => {
+    const category =
+      item.category.charAt(0).toUpperCase() + item.category.slice(1);
+    return category.includes(selectedProject.value);
+  });
 };
+
+const filterProjectsBySearch = () => {
+  const project = new RegExp(searchProject.value, "i");
+  return projects.value.filter((el) => el.title.match(project));
+};
+
+const filteredProjects = computed(() => {
+  if (selectedProject.value) {
+    return filterProjectsByCategory();
+  }
+  if (searchProject.value) {
+    return filterProjectsBySearch();
+  }
+  return projects.value;
+});
+
+onMounted(() => {
+  feather.replace();
+});
 </script>
 
 <template>

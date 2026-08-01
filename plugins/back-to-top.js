@@ -1,4 +1,3 @@
-import Vue from "vue";
-import BackToTop from "vue-backtotop";
-
-Vue.use(BackToTop);
+export default defineNuxtPlugin(() => {
+	// Back-to-top behavior is implemented by components/BackToTop.vue.
+});
