@@ -2,7 +2,7 @@
 
 ## Requirements
 
-- Node.js 18+ (recommended: Node.js 20 LTS)
+- Node.js 18+ (recommended: Node.js 22 LTS)
 - Yarn
 
 ## Installation
