@@ -1,3 +1,5 @@
+import { defineNuxtConfig } from "nuxt/config";
+
 export default defineNuxtConfig({
   compatibilityDate: "2026-08-01",
 
@@ -31,11 +33,7 @@ export default defineNuxtConfig({
     },
   ],
 
-  modules: [
-    "@nuxtjs/tailwindcss",
-    "@nuxtjs/color-mode",
-    "@pinia/nuxt",
-  ],
+  modules: ["@nuxtjs/tailwindcss", "@nuxtjs/color-mode", "@pinia/nuxt"],
 
   experimental: {
     appManifest: false,
