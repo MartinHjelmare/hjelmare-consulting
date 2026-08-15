@@ -1,16 +1,6 @@
 <script setup>
-import feather from "feather-icons";
-
 definePageMeta({
   scrollToTop: true,
-});
-
-onMounted(() => {
-  feather.replace();
-});
-
-onUpdated(() => {
-  feather.replace();
 });
 </script>
 

@@ -1,6 +1,5 @@
 <script setup>
 import { storeToRefs } from "pinia";
-import feather from "feather-icons";
 import { useSiteStore } from "~/stores/site";
 
 const selectedProject = ref("");
@@ -32,9 +31,6 @@ const filteredProjects = computed(() => {
   return projects.value;
 });
 
-onMounted(() => {
-  feather.replace();
-});
 </script>
 
 <template>

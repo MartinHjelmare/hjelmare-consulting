@@ -1,15 +1,9 @@
 <script setup>
-import feather from "feather-icons";
 const colorMode = useColorMode();
 const isClientMounted = ref(false);
 
 onMounted(() => {
   isClientMounted.value = true;
-  feather.replace();
-});
-
-onUpdated(() => {
-  feather.replace();
 });
 </script>
 
@@ -63,9 +57,21 @@ onUpdated(() => {
       <img
         v-if="isClientMounted && colorMode.value == 'dark'"
         src="/developer-dark.svg"
+        class="w-full h-auto"
+        width="415"
+        height="376"
+        decoding="async"
         alt="Developer Dark"
       />
-      <img v-else src="/developer.svg" alt="Developer Light" />
+      <img
+        v-else
+        src="/developer.svg"
+        class="w-full h-auto"
+        width="415"
+        height="376"
+        decoding="async"
+        alt="Developer Light"
+      />
     </div>
   </section>
 </template>

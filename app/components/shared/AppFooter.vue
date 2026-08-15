@@ -1,19 +1,10 @@
 <script setup>
 import { storeToRefs } from "pinia";
-import feather from "feather-icons";
 import FooterCopyright from "./FooterCopyright.vue";
 import { useSiteStore } from "~/stores/site";
 
 const siteStore = useSiteStore();
 const { socialProfiles } = storeToRefs(siteStore);
-
-onMounted(() => {
-  feather.replace();
-});
-
-onUpdated(() => {
-  feather.replace();
-});
 </script>
 
 <template>

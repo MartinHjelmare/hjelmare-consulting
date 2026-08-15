@@ -10,7 +10,19 @@ const { aboutMe } = storeToRefs(siteStore);
   <div class="block sm:flex sm:gap-10 mt-10 sm:mt-20">
     <!-- About profile image -->
     <div class="w-full sm:w-1/4 mb-7 sm:mb-0">
-      <img src="/profile.jpg" class="rounded-lg w-96" alt="" />
+      <picture>
+        <source srcset="/profile.avif" type="image/avif" />
+        <source srcset="/profile.webp" type="image/webp" />
+        <img
+          src="/profile.jpg"
+          class="rounded-lg w-96"
+          width="768"
+          height="790"
+          loading="lazy"
+          decoding="async"
+          alt=""
+        />
+      </picture>
     </div>
 
     <!-- About details -->

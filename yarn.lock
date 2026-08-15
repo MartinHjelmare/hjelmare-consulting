@@ -1682,6 +1682,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/feather-icons@npm:^4":
+  version: 4.29.4
+  resolution: "@types/feather-icons@npm:4.29.4"
+  checksum: 10c0/756e33dd395a57fb6b6e55a72834e3eb47cf4ce97bca2c8f7d8b44845c38b0cd397555824b09e562567191aa1d578779d8cde28f52b89fa7a00b7b9298e159b8
+  languageName: node
+  linkType: hard
+
 "@types/jsesc@npm:^2.5.0":
   version: 2.5.1
   resolution: "@types/jsesc@npm:2.5.1"
@@ -3683,7 +3690,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"feather-icons@npm:^4.28.0":
+"feather-icons@npm:^4.29.2":
   version: 4.29.2
   resolution: "feather-icons@npm:4.29.2"
   dependencies:
@@ -4059,8 +4066,9 @@ __metadata:
     "@nuxtjs/tailwindcss": "npm:^6.14.0"
     "@pinia/nuxt": "npm:^1.0.2"
     "@tailwindcss/forms": "npm:^0.5.10"
+    "@types/feather-icons": "npm:^4"
     "@vue/devtools-api": "npm:^8.1.5"
-    feather-icons: "npm:^4.28.0"
+    feather-icons: "npm:^4.29.2"
     nuxt: "npm:^4.5.2"
     pinia: "npm:^4.0.3"
     rolldown: "npm:~1.2.2"
