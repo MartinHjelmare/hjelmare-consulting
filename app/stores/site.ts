@@ -67,7 +67,7 @@ export const useSiteStore = defineStore("site", {
       },
       {
         id: createId(),
-        bio: "I currently work as a core developer on Home Assistant for Nabu Casa Inc.",
+        bio: "I currently work as a core developer on Home Assistant for the Open Home Foundation.",
       },
     ],
     copyrightDate: new Date().getFullYear(),
