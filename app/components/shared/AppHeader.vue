@@ -53,6 +53,9 @@ onMounted(() => {
               v-if="isClientMounted && colorMode.value == 'dark'"
               src="/logo-light.svg"
               class="w-36"
+              width="500"
+              height="500"
+              decoding="async"
               alt="Light Logo"
             />
 
@@ -61,6 +64,9 @@ onMounted(() => {
               src="/logo-dark.svg"
               alt="Color Logo"
               class="w-36"
+              width="500"
+              height="500"
+              decoding="async"
             />
           </NuxtLink>
         </div>

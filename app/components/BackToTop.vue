@@ -1,6 +1,4 @@
 <script setup>
-import feather from "feather-icons";
-
 const userScrollPosition = ref(0);
 
 const isScrolled = computed(() => {
@@ -20,11 +18,6 @@ const backToTop = () => {
 
 onMounted(() => {
   window.addEventListener("scroll", updateScrollPosition);
-  feather.replace();
-});
-
-onUpdated(() => {
-  feather.replace();
 });
 
 onBeforeUnmount(() => {

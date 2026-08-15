@@ -1,12 +1,7 @@
 <script setup>
-import feather from "feather-icons";
 import Button from "./reusable/Button.vue";
 
 defineProps(["showModal", "modal", "categories"]);
-
-onMounted(() => {
-  feather.replace();
-});
 </script>
 
 <template>

@@ -31,12 +31,6 @@
   </div>
 </template>
 
-<script setup>
-import feather from "feather-icons";
-
-onMounted(() => {
-  feather.replace();
-});
-</script>
+<script setup></script>
 
 <style></style>
