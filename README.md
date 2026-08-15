@@ -28,7 +28,7 @@
     NOTE: If you don't have yarn installed, you can install it globally using npm:
 
     ```sh
-    npm install --global yarn
+    npm install -g corepack
     ```
 
 4. Start a local dev server at `http://localhost:3000`
